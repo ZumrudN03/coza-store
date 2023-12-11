@@ -1,0 +1,21 @@
+.homeshopnowcard {
+    width: 430px;
+    height: 290px;
+    border: 1px solid lightgray;
+  
+
+    .homeshopnowcard_textBox {
+        padding: 40px 0px 0px 40px;
+
+        &_category {
+            font-size: 28px;
+            font-weight: 700;
+            color: #333333;
+            margin-bottom: 10px;
+        }
+
+        &_trend {
+            color: #333333;
+        }
+    }
+}
