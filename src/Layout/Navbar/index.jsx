@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './index.scss'
+import { WishlistContext } from '../../Context/wishlist'
+import { NavLink } from 'react-router-dom'
+import { BasketContext } from '../../Context/basket'
 
 function Navbar() {
+    const { wishlist } = useContext(WishlistContext)
+    const { basket } = useContext(BasketContext)
+
     return (
         <div className='navbarContainer'>
             <div className="navbarBg">
@@ -25,19 +31,105 @@ function Navbar() {
                         </div>
                         <div className='navmenu_menu'>
                             <ul>
-                                <li>Home</li>
-                                <li>Shop</li>
-                                <li>Features<sup>HOT</sup></li>
-                                <li>Blog</li>
-                                <li>About</li>
-                                <li>Contact</li>
+                                <li>
+                                    <NavLink
+                                        to="/"
+                                        style={({ isActive }) => {
+                                            return {
+                                                color: isActive ? "#717FE0" : "black",
+                                            };
+                                        }}
+                                    >
+                                        Home
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink
+                                        to="/shop"
+                                        style={({ isActive }) => {
+                                            return {
+                                                color: isActive ? "#717FE0" : "black",
+                                            };
+                                        }}
+                                    >
+                                        Shop
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink
+                                        to="/features"
+                                        style={({ isActive }) => {
+                                            return {
+                                                color: isActive ? "#717FE0" : "black",
+                                            };
+                                        }}
+                                    >
+                                        Features<sup>HOT</sup>
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink
+                                        to="/blog"
+                                        style={({ isActive }) => {
+                                            return {
+                                                color: isActive ? "#717FE0" : "black",
+                                            };
+                                        }}
+                                    >
+                                        Blog
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink
+                                        to="/about"
+                                        style={({ isActive }) => {
+                                            return {
+                                                color: isActive ? "#717FE0" : "black",
+                                            };
+                                        }}
+                                    >
+                                        About
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink
+                                        to="/contact"
+                                        style={({ isActive }) => {
+                                            return {
+                                                color: isActive ? "#717FE0" : "black",
+                                            };
+                                        }}
+                                    >
+                                        Contact
+                                    </NavLink>
+                                </li>
                             </ul>
                         </div>
                     </div>
                     <div className="navmenu_icons">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <i class="fa-solid fa-cart-shopping"><sup>2</sup></i>
-                        <i class="fa-regular fa-heart"><sup>0</sup></i>
+                        <i className="fa-solid fa-magnifying-glass"></i>
+
+                        <NavLink
+                            to="/basket"
+                            style={({ isActive }) => {
+                                return {
+                                    color: isActive ? "#717FE0" : "black",
+                                };
+                            }}
+                        >
+                            <i className="fa-solid fa-cart-shopping"><sup>{basket.length ? basket.length : "0"}</sup></i>
+                        </NavLink>
+
+                        <NavLink
+                            to="/wishlist"
+                            style={({ isActive }) => {
+                                return {
+                                    color: isActive ? "#717FE0" : "black",
+                                };
+                            }}
+                        >
+                            <i className="fa-regular fa-heart"><sup>{wishlist.length ? wishlist.length : "0"}</sup></i>
+                        </NavLink>
                     </div>
                 </div>
                 <div className="header_newCollection">

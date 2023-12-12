@@ -31,9 +31,9 @@ function Footer() {
               New York, NY 10018 or call us on (+1) 96 716 6879
             </p>
             <div className="footer_getInTouch_icons">
-              <i class="fa-brands fa-facebook"></i>
-              <i class="fa-brands fa-instagram"></i>
-              <i class="fa-brands fa-pinterest-p"></i>
+              <i className="fa-brands fa-facebook"></i>
+              <i className="fa-brands fa-instagram"></i>
+              <i className="fa-brands fa-pinterest-p"></i>
             </div>
           </div>
           <div className="footer_newSletter">
@@ -70,7 +70,7 @@ function Footer() {
           <div className="footer_bankCard_textBox">
             <p>
               Copyright ©2023 All rights reserved | This template is made with{" "}
-              <i class="fa-regular fa-heart"></i> by <span>Colorlib</span>
+              <i className="fa-regular fa-heart"></i> by <span>Colorlib</span>
             </p>
           </div>
         </div>

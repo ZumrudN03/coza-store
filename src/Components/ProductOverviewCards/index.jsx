@@ -17,8 +17,8 @@ function ProductOverviewCards() {
             <li>Watches </li>
           </ul>
           <div className='productOverview_header_allPrducts_search'>
-            <button><i class="fa-solid fa-filter"></i> Filter</button>
-            <button><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+            <button><i className="fa-solid fa-filter"></i> Filter</button>
+            <button><i className="fa-solid fa-magnifying-glass"></i>Search</button>
           </div>
         </div>
       </div>
