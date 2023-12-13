@@ -1,20 +1,28 @@
 import React, { useContext } from 'react'
 import { WishlistContext } from '../../Context/wishlist'
+import './index.scss'
 
 function WishlistCard() {
-    const {wishlist, removeWishlist} = useContext(WishlistContext)
+  const { wishlist, removeWishlist } = useContext(WishlistContext)
   return (
-    <div className='wishlistCard'>
-        {wishlist.length ? (wishlist.map((x)=>(
-            <ul key={x.id}>
-                <li><img src={x.thumbnail} /></li>
-                <li>{x.name}</li>
-                <li>${x.price}</li>
-                <button onClick={()=>removeWishlist(x)}>X</button>
-            </ul>
-        ))) : (<p>Wishlist is empty...</p>)}
-
-    </div>
+    <>
+      {wishlist.length ? (wishlist.map((x) => (
+        <div className='wishlistCard' key={x.id}>
+          <div className='wishlistCard_img'>
+            <i className="fa-solid fa-xmark" onClick={() => removeWishlist(x)}></i>
+            <img src={x.thumbnail} />
+            <div className='icon_bkg'></div>
+          </div>
+          <div className='wishlistCard_textbox'>
+            <p className='wishlistCard_textbox_name'>{x.name}</p>
+            <div className='wishlistCard_textbox_price_stock'>
+              <p>${x.price}</p>
+              <p className='stock'>{x.stockStatus}</p>
+            </div>
+          </div>
+        </div>
+      ))) : (<p className='empty'>Wishlist is empty...</p>)}
+    </>
   )
 }
 

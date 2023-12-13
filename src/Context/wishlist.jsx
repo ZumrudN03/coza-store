@@ -19,8 +19,12 @@ function WishlistProvider({children}) {
         setWishlist(wishlist.filter((x)=> x.id !== item.id))
     }
 
+    function totalPrice() {
+        return wishlist.reduce((acc, wishlist) => acc + wishlist.price, 0).toFixed(2)
+    }
+
   return (
-    <WishlistContext.Provider value={{wishlist, addWishlist, removeWishlist}}>
+    <WishlistContext.Provider value={{wishlist, addWishlist, removeWishlist, totalPrice}}>
         {children}
     </WishlistContext.Provider>
   )

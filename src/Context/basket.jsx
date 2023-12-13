@@ -13,7 +13,7 @@ function BasketProvider({ children }) {
         if (index === -1) {
             setBasket([...basket, { ...item, count: 1 }])
             return
-        } basket[index].count++ 
+        } basket[index].count++
         setBasket([...basket])
         console.log(basket);
     }
@@ -29,15 +29,18 @@ function BasketProvider({ children }) {
         if (basket[index].count !== 1) {
             basket[index].count--
             setBasket([...basket])
-        }return
-
+        } return
     }
 
     function removeBasket(item) {
-        setBasket(basket.filter((x)=> x.id !== item.id))
+        setBasket(basket.filter((x) => x.id !== item.id))
+    }
+    
+    function totalPrice() {
+        return basket.reduce((acc, basket) => acc + basket.count * basket.price, 0).toFixed(2)
     }
 
-    const data = {basket, addBasket, increase, decrease, removeBasket}
+    const data = { basket, addBasket, increase, decrease, removeBasket, totalPrice }
     return (
         <BasketContext.Provider value={data}>
             {children}

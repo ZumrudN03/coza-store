@@ -3,10 +3,15 @@ import './index.scss'
 import { WishlistContext } from '../../Context/wishlist'
 import { NavLink } from 'react-router-dom'
 import { BasketContext } from '../../Context/basket'
+import { BasketSliderContext } from '../../Context/basketSlider'
+import { WishlistSliderContext } from '../../Context/wishlistSlider'
 
 function Navbar() {
     const { wishlist } = useContext(WishlistContext)
     const { basket } = useContext(BasketContext)
+    const { handleClick } = useContext(BasketSliderContext)
+    const { wishlistHandleClick } = useContext(WishlistSliderContext)
+
 
     return (
         <div className='navbarContainer'>
@@ -108,28 +113,8 @@ function Navbar() {
                     </div>
                     <div className="navmenu_icons">
                         <i className="fa-solid fa-magnifying-glass"></i>
-
-                        <NavLink
-                            to="/basket"
-                            style={({ isActive }) => {
-                                return {
-                                    color: isActive ? "#717FE0" : "black",
-                                };
-                            }}
-                        >
-                            <i className="fa-solid fa-cart-shopping"><sup>{basket.length ? basket.length : "0"}</sup></i>
-                        </NavLink>
-
-                        <NavLink
-                            to="/wishlist"
-                            style={({ isActive }) => {
-                                return {
-                                    color: isActive ? "#717FE0" : "black",
-                                };
-                            }}
-                        >
-                            <i className="fa-regular fa-heart"><sup>{wishlist.length ? wishlist.length : "0"}</sup></i>
-                        </NavLink>
+                        <i className="fa-solid fa-cart-shopping" onClick={handleClick}><sup>{basket.length ? basket.length : "0"}</sup></i>
+                        <i className="fa-regular fa-heart" onClick={wishlistHandleClick}><sup>{wishlist.length ? wishlist.length : "0"}</sup></i>
                     </div>
                 </div>
                 <div className="header_newCollection">

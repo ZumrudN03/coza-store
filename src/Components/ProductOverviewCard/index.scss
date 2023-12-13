@@ -8,9 +8,38 @@
     width: 320px;
     height: 340px;
     margin: 20px 0px;
+    overflow: hidden;
 
     &_thumbnail {
         width: 315px;
+        position: relative;
+
+        img {
+            transition: 500ms;
+
+            &:hover {
+                scale: (1.1);
+            }
+        }
+
+        &:hover .tumbnail_hover {
+            opacity: 1;
+            transform: translateY(-50px)
+        }
+
+        .tumbnail_hover {
+            bottom: 0;
+            left: 60px;
+            background-color: white;
+            color: #222222;
+            padding: 15px 40px;
+            border-radius: 70px;
+            border: none;
+            overflow: hidden;
+            opacity: 0;
+            transition: 500ms;
+            position: absolute;
+        }
     }
 
     &_desc {

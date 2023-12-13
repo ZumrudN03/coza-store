@@ -1,0 +1,91 @@
+.wishlistCard {
+    border: 1px solid rgb(233, 233, 233);
+    width: 320px;
+    height: 92px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    &_img {
+        width: 32%;
+        position: relative;
+        
+        .icon_bkg {
+            background-color: rgba(0, 0, 0, 0.527);
+            width: 100px;
+            height: 90px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: all 300ms;
+        }
+
+        img {
+            width: 100px;
+            height: 90px;
+            object-fit: cover;
+        }
+
+        &:hover .fa-xmark {
+            opacity: 1;
+        }
+
+        &:hover .icon_bkg {
+            opacity: 1;
+        }
+    }
+
+    &_textbox {
+        width: 65%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 90px;
+        padding: 5px 5px 5px 0px;
+
+        &_name {
+            font-size: 11px;
+            transition: 300ms;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+
+            &:hover {
+                color: #717FE0;
+            }
+        }
+
+        &_price_stock {
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Montserrat', sans-serif;
+                p{
+                    font-size: 14px;
+                    color: #8A8A8A;
+                    padding-right: 5px;
+                }
+                .stock{
+                    font-weight: 500;
+                }
+        }
+    }
+
+    .fa-xmark {
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        color: white;
+        z-index: 1;
+        opacity: 0;
+        transition: all 300ms;
+        cursor: pointer;
+
+    }
+
+}
+.empty{
+    font-size: 18px;
+    color: #717FE0;
+}
