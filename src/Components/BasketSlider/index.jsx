@@ -9,10 +9,8 @@ import { BasketContext } from '../../Context/basket'
 function BasketSlider() {
   const { isOpen, handleClick } = useContext(BasketSliderContext)
   const { totalPrice } = useContext(BasketContext)
-  console.log(totalPrice);
   return (
     <>
-      {console.log(isOpen)}
       <div className={isOpen ? `opacityDiv` : ''}></div>
       <div id='basketSlider' className={isOpen ? `translate` : ''}>
         <div className='basketSlider'>

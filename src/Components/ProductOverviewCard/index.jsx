@@ -3,24 +3,26 @@ import './index.scss'
 import { WishlistContext } from '../../Context/wishlist'
 import { BasketContext } from '../../Context/basket'
 import BasketSlider from '../BasketSlider'
+import { FilterProductContext } from '../../Context/filterProduct'
 
 function ProductOverviewCard() {
-  const [homeProduct, setHomeProduct] = useState([])
+  // const [homeProduct, setHomeProduct] = useState([])
+  const { dataProduct } = useContext(FilterProductContext)
   const { addWishlist } = useContext(WishlistContext)
   const { addBasket } = useContext(BasketContext)
 
-  function getFetch() {
-    fetch("https://6573ac96f941bda3f2af125e.mockapi.io/juan-store/api/v1/products")
-      .then((res) => res.json())
-      .then((data) => setHomeProduct(data))
-  }
-  useEffect(() => {
-    getFetch()
-  }, [])
+  // function getFetch() {
+  //   fetch("https://6573ac96f941bda3f2af125e.mockapi.io/juan-store/api/v1/products")
+  //     .then((res) => res.json())
+  //     .then((data) => setHomeProduct(data))
+  // }
+  // useEffect(() => {
+  //   getFetch()
+  // }, [])
 
   return (
     <div className='productoverviewcard'>
-      {homeProduct.map((x) =>
+      {dataProduct.map((x) =>
         <ul className='productOverviewCard' key={x.id}>
           <li className='productOverviewCard_thumbnail'>
             <img src={x.thumbnail} />
@@ -36,7 +38,6 @@ function ProductOverviewCard() {
               <i className="fa-solid fa-cart-shopping" onClick={() => addBasket(x)}></i>
             </div>
           </div>
-
         </ul>
       )}
     </div>

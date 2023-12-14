@@ -15,7 +15,6 @@ function BasketProvider({ children }) {
             return
         } basket[index].count++
         setBasket([...basket])
-        console.log(basket);
     }
 
     function increase(item) {
