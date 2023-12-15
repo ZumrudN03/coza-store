@@ -1,21 +1,42 @@
-.homeshopnowcard {
+.homeShopNowCard_container {
     width: 400px;
     height: 290px;
-    border: 1px solid lightgray;
-  
 
-    .homeshopnowcard_textBox {
-        padding: 40px 0px 0px 40px;
+    .homeshopnowcard {
+        width: 100%;
+        height: 100%;
+        border: 1px solid lightgray;
+        cursor: pointer;
 
-        &_category {
-            font-size: 28px;
-            font-weight: 700;
-            color: #333333;
-            margin-bottom: 10px;
+        &:hover p {
+            color: white;
         }
 
-        &_trend {
-            color: #333333;
+        .homeshopnowcard_textBox {
+            padding: 40px 0px 0px 40px;
+            width: 100%;
+            height: 100%;
+        transition: all 500ms;
+
+            &_category {
+                font-size: 28px;
+                font-weight: 700;
+                color: #333333;
+                margin-bottom: 10px;
+            }
+
+            &_trend {
+                color: #333333;
+
+            }
+
         }
     }
+    
+    &:hover .homeshopnowcard_textBox{
+        background-color: #7180e0bd;
+       
+    }
+
+
 }

@@ -31,7 +31,7 @@
             font-weight: 700;
         }
 
-        &_allPrducts {
+        &_allProducts {
             display: flex;
             justify-content: space-between;
 
@@ -44,7 +44,8 @@
                     color: rgb(121, 121, 121);
                     cursor: pointer;
                     transition: 300ms;
-                    &:hover{
+
+                    &:hover {
                         color: #222222;
                         text-decoration: underline;
                     }
@@ -82,5 +83,115 @@
             }
 
         }
+
+        .searchOpen {
+            border: 1px solid lightgray;
+            max-width: 1350px;
+            height: 60px;
+            margin: 20px 0px;
+            display: flex;
+            align-items: center;
+            transition: 400ms;
+
+            input {
+                outline: none;
+                border: none;
+                font-size: 18px;
+            }
+
+            i {
+                font-size: 12px;
+                padding: 0px 17px 0px 25px;
+            }
+        }
+
+        .filterOpen {
+            max-width: 1350px;
+            height: 265px;
+            background-color: #F2F2F2;
+            display: flex;
+            padding: 30px;
+            justify-content: space-between;
+            margin-top: 30px;
+            transition: 400ms;
+
+
+            h4 {
+                font-size: 17px;
+                font-weight: 500;
+            }
+
+            p {
+                color: rgb(165, 165, 165);
+                padding-top: 7px;
+                transition: 200ms;
+                cursor: pointer;
+
+                &:hover {
+                    color: #717FE0;
+                    text-decoration: underline;
+                }
+
+                i {
+                    padding-right: 5px;
+                }
+            }
+
+            .tags {
+                width: 250px;
+
+                h4 {
+                    padding-bottom: 10px;
+                }
+
+                button {
+                    padding: 5px 15px;
+                    background-color: transparent;
+                    border: 1px solid lightgray;
+                    border-radius: 20px;
+                    color: rgb(165, 165, 165);
+                    margin: 0px 5px 5px 0px;
+                    cursor: pointer;
+                    transition: 200ms;
+
+                    &:hover {
+                        color: #717FE0;
+                        border-color: #717FE0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.hiddenSearchCover {
+    border: 0px solid lightgray;
+    height: 0px;
+    transition: 400ms;
+
+    input {
+        opacity: 0;
+    }
+
+    i {
+        opacity: 0;
+    }
+}
+
+.hiddenFilterCover {
+    height: 0;
+    transition: 400ms;
+    overflow: hidden;
+    .sortBy{
+        opacity: 0;
+    }
+    .price{
+        opacity: 0;
+    }
+    .color{
+        opacity: 0;
+    }
+    .tags{
+        opacity: 0;
     }
 }

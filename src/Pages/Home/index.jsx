@@ -10,10 +10,10 @@ function HomePage() {
   return (
     <div>
       <Navbar></Navbar>
-      <HomeShopNowCards/>
+      <HomeShopNowCards />
       <BasketSlider />
-      <WishlistSlider/>
-      <ProductOverviewCards/>
+      <WishlistSlider />
+      <ProductOverviewCards />
       <Footer></Footer>
     </div>
   )

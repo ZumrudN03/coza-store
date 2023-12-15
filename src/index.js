@@ -7,6 +7,7 @@ import BasketProvider from "./Context/basket";
 import BasketSliderProvider from "./Context/basketSlider";
 import WishlistSliderProvider from "./Context/wishlistSlider";
 import FilterProductProvider from "./Context/filterProduct";
+import FilterSearchProvider from "./Context/filterSeach";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -16,7 +17,9 @@ root.render(
         <WishlistProvider>
           <WishlistSliderProvider>
             <FilterProductProvider>
-              <App />
+              <FilterSearchProvider>
+                <App />
+              </FilterSearchProvider>
             </FilterProductProvider>
           </WishlistSliderProvider>
         </WishlistProvider>

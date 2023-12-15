@@ -27,8 +27,6 @@ function FilterProductProvider({ children }) {
       ? fetchData
       : fetchData.filter((item) => item.category === filterData);
 
-     
-
   return(
     <FilterProductContext.Provider value={{filterProduct,dataProduct}}>
         {children}

@@ -4,12 +4,15 @@ import { WishlistContext } from '../../Context/wishlist'
 import { BasketContext } from '../../Context/basket'
 import BasketSlider from '../BasketSlider'
 import { FilterProductContext } from '../../Context/filterProduct'
+// import { SearchContext } from '../../Context/search'
 
 function ProductOverviewCard() {
   // const [homeProduct, setHomeProduct] = useState([])
   const { dataProduct } = useContext(FilterProductContext)
   const { addWishlist } = useContext(WishlistContext)
   const { addBasket } = useContext(BasketContext)
+  // const { search } = useContext(SearchContext)
+
 
   // function getFetch() {
   //   fetch("https://6573ac96f941bda3f2af125e.mockapi.io/juan-store/api/v1/products")
@@ -23,23 +26,23 @@ function ProductOverviewCard() {
   return (
     <div className='productoverviewcard'>
       {dataProduct.map((x) =>
-        <ul className='productOverviewCard' key={x.id}>
-          <li className='productOverviewCard_thumbnail'>
-            <img src={x.thumbnail} />
-            <button className='tumbnail_hover'>Quick View</button>
-          </li>
-          <div className="productOverviewCard_desc">
-            <div className="productOverviewCard_desc_textBox">
-              <li className='productOverviewCard_desc_textBox_name'>{x.name}</li>
-              <li className='productOverviewCard_desc_textBox_price'>${x.price}</li>
+          <ul className='productOverviewCard' key={x.id}>
+            <li className='productOverviewCard_thumbnail'>
+              <img src={x.thumbnail} />
+              <button className='tumbnail_hover'>Quick View</button>
+            </li>
+            <div className="productOverviewCard_desc">
+              <div className="productOverviewCard_desc_textBox">
+                <li className='productOverviewCard_desc_textBox_name'>{x.name}</li>
+                <li className='productOverviewCard_desc_textBox_price'>${x.price}</li>
+              </div>
+              <div className="productOverviewCard_desc_icon" >
+                <i className="fa-regular fa-heart" onClick={() => addWishlist(x)}></i>
+                <i className="fa-solid fa-cart-shopping" onClick={() => addBasket(x)}></i>
+              </div>
             </div>
-            <div className="productOverviewCard_desc_icon" >
-              <i className="fa-regular fa-heart" onClick={() => addWishlist(x)}></i>
-              <i className="fa-solid fa-cart-shopping" onClick={() => addBasket(x)}></i>
-            </div>
-          </div>
-        </ul>
-      )}
+          </ul>
+        )}
     </div>
   )
 }
